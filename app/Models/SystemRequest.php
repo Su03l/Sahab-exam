@@ -22,6 +22,7 @@ class SystemRequest extends Model
         'status' => RequestStatus::class,
     ];
 
+    // the user who created this request
     public function user()
     {
         return $this->belongsTo(User::class, 'created_by');
