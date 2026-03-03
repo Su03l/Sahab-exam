@@ -36,6 +36,7 @@ class SystemRequestController extends Controller
     // store request
     public function store(StoreSystemRequest $request)
     {
+        // create request
         SystemRequest::create([
             'title' => $request->title,
             'description' => $request->description,
