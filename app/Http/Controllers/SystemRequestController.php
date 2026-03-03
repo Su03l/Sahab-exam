@@ -17,6 +17,7 @@ class SystemRequestController extends Controller
     {
         $user = auth()->user();
 
+        // check if user is manager
         if ($user->role === UserRole::MANAGER) {
             $requests = SystemRequest::with('user')->latest()->get();
         } else {
