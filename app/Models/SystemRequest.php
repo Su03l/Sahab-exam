@@ -18,6 +18,7 @@ class SystemRequest extends Model
         'approved_by'
     ];
 
+    // cast status to enum
     protected $casts = [
         'status' => RequestStatus::class,
     ];
@@ -28,6 +29,7 @@ class SystemRequest extends Model
         return $this->belongsTo(User::class, 'created_by');
     }
 
+    // the user who approved this request
     public function manager()
     {
         return $this->belongsTo(User::class, 'approved_by');
