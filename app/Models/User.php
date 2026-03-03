@@ -41,6 +41,7 @@ class User extends Authenticatable
         return $this->hasMany(SystemRequest::class, 'created_by');
     }
 
+    // the notifications belong to this user
     public function notifications()
     {
         return $this->hasMany(Notification::class);
