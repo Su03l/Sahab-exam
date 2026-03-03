@@ -27,6 +27,7 @@ class SystemRequestController extends Controller
         return view('requests.index', compact('requests'));
     }
 
+    // create request
     public function create()
     {
         return view('requests.create');
