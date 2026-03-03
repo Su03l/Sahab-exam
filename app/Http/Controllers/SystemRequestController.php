@@ -33,6 +33,7 @@ class SystemRequestController extends Controller
         return view('requests.create');
     }
 
+    // store request
     public function store(StoreSystemRequest $request)
     {
         SystemRequest::create([
