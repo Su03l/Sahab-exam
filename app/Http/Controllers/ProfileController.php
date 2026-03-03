@@ -53,6 +53,7 @@ class ProfileController extends Controller
         // delete user
         $user->delete();
 
+        // invalidate session and regenerate token
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
