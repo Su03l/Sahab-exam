@@ -15,6 +15,7 @@ class SystemRequestApiController extends Controller
     {
         $user = $request->user();
 
+        // if user is manager get all system requests else get only user's system requests
         if ($user->role === UserRole::MANAGER) {
             $requests = SystemRequest::with('user')->latest()->get();
         } else {
