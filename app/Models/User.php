@@ -25,6 +25,7 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    // cast attributes
     protected function casts(): array
     {
         return [
@@ -34,6 +35,7 @@ class User extends Authenticatable
         ];
     }
 
+    // the system requests created by this user
     public function systemRequests()
     {
         return $this->hasMany(SystemRequest::class, 'created_by');
