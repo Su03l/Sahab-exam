@@ -53,10 +53,12 @@ class SystemRequestController extends Controller
         // authorize
         Gate::authorize('manageStatus', $systemRequest);
 
+        // validate
         $request->validate([
             'status' => ['required', 'in:approved,rejected']
         ]);
 
+        // update status
         $systemRequest->update([
             'status' => $request->status,
             'approved_by' => auth()->id(),
