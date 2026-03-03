@@ -47,6 +47,7 @@ class ProfileController extends Controller
         // get user
         $user = $request->user();
 
+        // logout user
         Auth::logout();
 
         $user->delete();
