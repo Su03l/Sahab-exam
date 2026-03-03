@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 class SystemRequestApiController extends Controller
 {
+    // get all system requests
     public function index(Request $request)
     {
         $user = $request->user();
