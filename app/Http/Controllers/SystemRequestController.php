@@ -50,6 +50,7 @@ class SystemRequestController extends Controller
     // update status
     public function updateStatus(Request $request, SystemRequest $systemRequest)
     {
+        // authorize
         Gate::authorize('manageStatus', $systemRequest);
 
         $request->validate([
