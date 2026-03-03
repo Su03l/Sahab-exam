@@ -47,6 +47,7 @@ class SystemRequestController extends Controller
         return redirect()->route('requests.index')->with('success', 'تم إرسال الطلب بنجاح.');
     }
 
+    // update status
     public function updateStatus(Request $request, SystemRequest $systemRequest)
     {
         Gate::authorize('manageStatus', $systemRequest);
