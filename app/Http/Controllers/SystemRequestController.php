@@ -64,6 +64,7 @@ class SystemRequestController extends Controller
             'approved_by' => auth()->id(),
         ]);
 
+        // create notification
         $statusText = $request->status === 'approved' ? 'الموافقة على' : 'رفض';
         Notification::create([
             'user_id' => $systemRequest->created_by,
