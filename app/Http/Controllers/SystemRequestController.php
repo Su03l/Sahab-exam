@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Gate;
 
 class SystemRequestController extends Controller
 {
+    // get all requests
     public function index()
     {
         $user = auth()->user();
